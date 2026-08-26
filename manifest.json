@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "VibeWrite",
+  "version": "0.1.0",
+  "description": "Select text, press the shortcut, let AI improve your writing.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "trigger": {
+      "suggested_key": {
+        "default": "Ctrl+M",
+        "mac": "Ctrl+M"
+      },
+      "description": "Inject VibeWrite into the current tab"
+    }
+  }
+}
