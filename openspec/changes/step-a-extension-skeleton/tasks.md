@@ -56,7 +56,7 @@
   > Command: `npm run lint`
   > Expected: biome check 無任何 error/diagnostic（exit code 0）
 
-- [ ] T5: 權限組零警告（人工檢核點，自動化豁免）
+- [x] T5: 權限組零警告（人工檢核點，自動化豁免；2026-08-26 Mac 實機 QA 通過：零警告、Ctrl+M 注入 Notion 成功）
   > Command: 手動：`chrome://extensions` → Load unpacked `dist/` → 觀察安裝流程
   > Expected: Chrome 不顯示權限警告對話框；`chrome://extensions/shortcuts` 顯示 VibeWrite 的 trigger 綁 `Ctrl+M`
   > 豁免說明：安裝警告與快捷鍵 UI 無對應自動化 API，屬人工 QA（Mac 首測一併執行）
