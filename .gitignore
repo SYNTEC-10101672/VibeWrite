@@ -3,3 +3,6 @@ dist/
 playwright-report/
 test-results/
 .omo/
+server/.env
+server/node_modules/
+server/dist/

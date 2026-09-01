@@ -4,14 +4,18 @@
 
 - `npm run build` — 編譯到 `dist/`（含複製 manifest）
 - `npm run watch` — tsc watch（不會複製 manifest，改 manifest 需重跑 build）
-- `npm run lint` — biome check（`src` `tests`）
+- `npm run lint` — biome check（`src` `tests` `server/src`）
 - `xvfb-run -a npx playwright test` — 自動測試；須 xvfb + xdotool 環境，裸跑 `npm test` 會失敗
+- `cd server && npm run build` — 編譯 server（Copilot 橋接服務）到 `server/dist/`（獨立於根目錄 `npm run build`，那是 extension）
+- `bash server/restart.sh` — 冪等部署（死→救活／活→換新版），服務名 `vibewrite-server`
+- 測試方式：服務上線後以 curl 驗 T1-T7（見 `openspec/changes/archive/2026-09-01-copilot-server/tasks.md` §Tests；`KEY=$(grep '^VW_SECRET=' server/.env | cut -d= -f2)`）
 
 ## 專案結構
 
 - `src/` — TypeScript 源碼（`background.ts` service worker、`content.ts` content script）
 - `dist/` — build 產物（gitignore；load unpacked 載入此目錄）
 - `tests/` — Playwright 測試與 fixtures
+- `server/` — Copilot 橋接服務子專案（自包含 package.json/tsconfig；細節見 README）
 
 ## 鐵律
 

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc && cp manifest.json dist/",
     "watch": "tsc --watch",
-    "lint": "biome check src tests",
+    "lint": "biome check src tests server/src",
     "test": "playwright test"
   },
   "devDependencies": {
